@@ -1,3 +1,5 @@
+<!-- radio buttons: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,18 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <div>
+    <div class="highScores">
         <a href="">View High Scores</a>
     </div>
-    <div class="intro">
+    <div class="introPage">
         <h1>Coding Quiz Challenge</h1>
         <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-    </div>
-    <div class="start-button">
-        <button id="start-quiz">Start Quiz</button>
-    </div>
+        <button id="startQuiz">Start Quiz</button>
+      </div>
+
+    <form class="page1" data-number="1" data-state="hidden"> 
+      <fieldset>
+        <legend>Commonly used data types do NOT include: </legend>
+    
+        <div>
+          <input type="radio" id="strings" class="dataType" value="strings">
+          <label for="strings">strings</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="booleans" class="dataType" value="booleans">
+          <label for="booleans">booleans</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="alerts" class="dataType" value="alerts">
+          <label for="alerts">alerts</label>
+        </div>
+
+        <div>
+          <input type="radio" id="numbers" class="dataType" value="numbers">
+          <label for="numbers">numbers</label>
+        </div>
+
+        <div>
+          <button class="page1Submit" type="submit">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <pre id="answer"></pre>
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>

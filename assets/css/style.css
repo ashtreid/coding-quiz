@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.highScores {
+    padding: 20px;
+}
+
+/* Welcome page - page 0 */
+.introPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#startQuiz {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* margin: 50px; */
+    background-color: blueviolet;
+    color: red;
+}
+
+.page1 {
+    display: none;
+}
