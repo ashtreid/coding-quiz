@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.highScores {
+    padding: 20px;
+}
+
+/* Welcome page - page 0 */
+.introPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Quiz pages */
+#startQuizBtn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: blueviolet;
+    color: red;
+}
+
+.quizForm {
+    display: none;
+}
+
+/* .nextBtns {
+    display: none;
+} */
+
+#nextBtn1, #nextBtn2, #nextBtn3, #nextBtn4, #nextBtn5, #nextBtn6, #nextBtn7 {
+    display: none;
+} 
+
+.scorePage {
+    display: none;
+}
+
+/* .submitBtns {
+    display: none;
+} */
+
+#submitBtn1, #submitBtn2, #submitBtn3, #submitBtn4, #submitBtn5, #submitBtn6, #submitBtn7 {
+    display: none;
+}
