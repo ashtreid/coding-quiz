@@ -5,11 +5,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .highScores {
@@ -25,18 +20,35 @@ body {
     padding: 20px;
 }
 
-#startQuiz {
+/* Quiz pages */
+#startQuizBtn {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* align-content: center; */
-    /* margin: 50px; */
     background-color: blueviolet;
     color: red;
 }
 
-.page1 {
+.quizForm {
+    display: none;
+}
+
+/* .nextBtns {
+    display: none;
+} */
+
+#nextBtn1, #nextBtn2, #nextBtn3, #nextBtn4, #nextBtn5, #nextBtn6, #nextBtn7 {
+    display: none;
+} 
+
+.scorePage {
+    display: none;
+}
+
+/* .submitBtns {
+    display: none;
+} */
+
+#submitBtn1, #submitBtn2, #submitBtn3, #submitBtn4, #submitBtn5, #submitBtn6, #submitBtn7 {
     display: none;
 }

@@ -16,39 +16,77 @@
     <div class="introPage">
         <h1>Coding Quiz Challenge</h1>
         <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-        <button id="startQuiz">Start Quiz</button>
+        <button id="startQuizBtn">Start Quiz</button>
       </div>
 
-    <form class="page1" data-number="1" data-state="hidden"> 
+    <form class="quizForm"> 
       <fieldset>
-        <legend>Commonly used data types do NOT include: </legend>
+        <legend class="question"></legend>
     
         <div>
-          <input type="radio" id="strings" class="dataType" value="strings">
-          <label for="strings">strings</label>
+          <input type="radio" id="choice1" name="radioChoice">
+          <label for="choice1"></label>
         </div>
     
         <div>
-          <input type="radio" id="booleans" class="dataType" value="booleans">
-          <label for="booleans">booleans</label>
+          <input type="radio" id="choice2" name="radioChoice">
+          <label for="choice2"></label>
         </div>
     
         <div>
-          <input type="radio" id="alerts" class="dataType" value="alerts">
-          <label for="alerts">alerts</label>
+          <input type="radio" id="choice3" name="radioChoice">
+          <label for="choice3"></label>
         </div>
 
         <div>
-          <input type="radio" id="numbers" class="dataType" value="numbers">
-          <label for="numbers">numbers</label>
+          <input type="radio" id="choice4" name="radioChoice">
+          <label for="choice4"></label>
         </div>
 
-        <div>
-          <button class="page1Submit" type="submit">Submit</button>
+        <div class="submitBtns">
+          <button id="submitBtn1" type="submit">Submit</button>
+          <button id="submitBtn2" type="submit">Submit</button>
+          <button id="submitBtn3" type="submit">Submit</button>
+          <button id="submitBtn4" type="submit">Submit</button>
+          <button id="submitBtn5" type="submit">Submit</button>
+          <button id="submitBtn6" type="submit">Submit</button>
+          <button id="submitBtn7" type="submit">Submit</button>
         </div>
       </fieldset>
+
+      <div>
+        <p id="feedBack"></p>
+      </div> 
+
+      <div class="nextBtns">
+        <button id="nextBtn1">Next</button>
+        <button id="nextBtn2">Next</button>
+        <button id="nextBtn3">Next</button>
+        <button id="nextBtn4">Next</button>
+        <button id="nextBtn5">Next</button>
+        <button id="nextBtn6">Next</button>
+        <button id="nextBtn7">Next</button>    
+      </div>
     </form>
-    <pre id="answer"></pre>
+
+    <div class="scorePage">
+      <h2>All done!</h2>
+      <p id="finalScore"></p>
+      <label for="initialsInput">Enter initials:</label>
+      <input type="text" id="initialsInput"/>
+      <div>
+        <button class="scoreSubmitBtn" type="submit">Submit</button>
+      </div>
+    </div>
+
+    <div class="highScoresPage">
+      <h1>High Scores</h1>
+      <ol class="highScoreList">
+      </ol>
+      <button id="goBackBtn">Go Back</button>
+      <button id="clearBtn">Clear high scores</button>
+    </div>
+
     <script src="../assets/js/script.js"></script>
   </body>
 </html>
