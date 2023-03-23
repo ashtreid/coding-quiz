@@ -1,6 +1,8 @@
 var introPage = document.querySelector(".introPage");
 var startQuizBtn = document.getElementById("startQuizBtn");
 var quizPage = document.querySelector(".quizForm");
+var viewHighScoresLink = document.getElementById("hiScoreLink")
+var timerEl = document.querySelector(".timer");
 var questionAnswers = [
   {
     q: "Commonly used data types do NOT include: ",
@@ -58,9 +60,14 @@ var submit7 = document.getElementById("submitBtn7");
 var feedBack = document.getElementById("feedBack");
 var scorePage = document.querySelector(".scorePage");
 var scoreSubmitBtn = document.querySelector(".scoreSubmitBtn");
+var highScoresPage = document.querySelector(".highScoresPage");
+var clearScoresBtn = document.getElementById("clearBtn");
+var goBackBtn = document.getElementById("goBackBtn");
 
 var correctCounter = 0;
 var wrongCounter = 0;
+var timerCount = 0;
+var timer;
 
 
 
@@ -119,7 +126,6 @@ function setUpQnA5() {
   submit5.style.display = "block";
 };
 
-
 function resetQnAs(submit, next) {
   question.textContent = "";
 
@@ -140,13 +146,33 @@ function resetQnAs(submit, next) {
 function validateAnswers(expectedAnswer) {
   if (expectedAnswer.checked) {
     feedBack.textContent = "Correct!"
-    correctCounter++
+    correctCounter++;
     addCorrect();
+
   } else {
     feedBack.textContent = "Wrong!"
-    wrongCounter++
+    wrongCounter++;
     addWrong();
+
+    clearInterval(timer);
+    timerCount += 5;
+    startTimer(60); 
   };
+};
+
+function startTimer(seconds) {
+  timer = setInterval(function() {
+    if (timerCount >= seconds) {
+      clearInterval(timer);
+      timerEl.textContent = "Out of time!";
+      quizPage.style.display = "none";
+      scorePage.style.display = "block";
+    } else {
+      var decreaseCount = seconds - timerCount
+      timerEl.textContent = `Seconds left: 00:${decreaseCount}`;
+      timerCount++;
+    }
+  }, 1000);
 };
 
 function uncheckRadios() {
@@ -213,27 +239,33 @@ function renderHighScoreList(history) {
   
   for (let index = 0; index < history.length; index++) {
     var li = document.createElement("li")
-    var list = (`${history[index].name} - ${history[index].correct}`, li)
-    // var test = list.textContent
-    list.textContent = highScoreList.append()
+    li.innerHTML = (`${history[index].name} - ${history[index].correct}`)
+    highScoreList.append(li)
   }
 }
 
-function addHighScoreList() {
-  // var grabInitials = localStorage.getItem
-  // https://stackoverflow.com/questions/27450003/how-to-extract-object-values-from-localstorage-to-each-row-in-javascript
+// EVENT LISTENERS _____________________________________________________________________________________________________________________________________
+viewHighScoresLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
 
-};
+  introPage.style.display = "none";
+  quizPage.style.display = "none";
+  scorePage.style.display = "none";
 
-// EVENT LISTENERS
+  highScoresPage.style.display = "block";
+});
+
 startQuizBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  event.stopPropagation;
+  event.stopPropagation();
   introPage.style.display = "none";
 
   quizPage.style.display = "block";
-  
+  startTimer(60);
   setUpQnA1();
+  // timerStart();
+  
 });
 
 submit1.addEventListener("click", (event) => {
@@ -335,7 +367,28 @@ nextBtn5.addEventListener("click", (event) => {
 
 scoreSubmitBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  event.stopPropagation(); 
+  event.stopPropagation();
+  
+  scorePage.style.display = "none";
+  highScoresPage.style.display = "block";
+
+  scoreSubmitBtn.disabled = true;
 
   addScoresLocally();
+});
+
+clearScoresBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation(); 
+
+  localStorage.clear();
+  var highScoreList = document.querySelector(".highScoreList");
+  highScoreList.textContent = "";
+});
+
+goBackBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation(); 
+
+  window.location.reload();
 });
