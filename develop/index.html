@@ -1,5 +1,3 @@
-<!-- radio buttons: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,9 +8,10 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <div class="highScores">
-        <a href="">View High Scores</a>
+    <div class="highScoresLink">
+        <a href=".highScoresPage" id="hiScoreLink">View High Scores</a>
     </div>
+    
     <div class="introPage">
         <h1>Coding Quiz Challenge</h1>
         <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
@@ -20,6 +19,7 @@
       </div>
 
     <form class="quizForm"> 
+      <div class="timer"></div>
       <fieldset>
         <legend class="question"></legend>
     
