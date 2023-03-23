@@ -5,10 +5,19 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .highScoresLink {
     padding: 20px;
+    font-size: 20px;
+}
+
+.timer {
+    padding: 20px;
+    font-size: 19px;
+    background-color: lightcoral;
+    color: #fff
 }
 
 .introPage {
@@ -19,16 +28,53 @@ body {
     padding: 20px;
 }
 
+#instructions {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 #startQuizBtn {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color: blueviolet;
-    color: red;
+    background-color: rgb(237, 126, 66);
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .quizForm {
     display: none;
+    margin: 20px;
+}
+
+.question {
+    padding: 15px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.quizQuestion {
+    padding: 10px;
+}
+
+.submitBtns, .nextBtns {
+    padding: 10px; 
+}
+
+#feedBack {
+    padding: 10px;
+    background-color:lavender;
+    color: rgb(20, 95, 236);
+    font-family: cursive;
+    font-size: 25px;
+}
+
+fieldset {
+    padding: 15px;
 }
 
 #nextBtn1, #nextBtn2, #nextBtn3, #nextBtn4, #nextBtn5, #nextBtn6, #nextBtn7 {
@@ -37,6 +83,7 @@ body {
 
 .scorePage {
     display: none;
+    padding: 50px;
 }
 
 #submitBtn1, #submitBtn2, #submitBtn3, #submitBtn4, #submitBtn5, #submitBtn6, #submitBtn7 {
@@ -45,4 +92,5 @@ body {
 
 .highScoresPage {
     display: none;
+    padding: 50px;
 }

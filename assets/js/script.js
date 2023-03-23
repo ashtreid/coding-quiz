@@ -66,8 +66,8 @@ var goBackBtn = document.getElementById("goBackBtn");
 
 var correctCounter = 0;
 var wrongCounter = 0;
-// var time;
-// var timeCount;
+var timerCount = 0;
+var timer;
 
 
 
@@ -126,7 +126,6 @@ function setUpQnA5() {
   submit5.style.display = "block";
 };
 
-
 function resetQnAs(submit, next) {
   question.textContent = "";
 
@@ -144,20 +143,17 @@ function resetQnAs(submit, next) {
   enableRadios();
 };
 
-var timerCount = 0;
-var timer;
-
 function validateAnswers(expectedAnswer) {
   if (expectedAnswer.checked) {
     feedBack.textContent = "Correct!"
     correctCounter++;
     addCorrect();
+
   } else {
     feedBack.textContent = "Wrong!"
     wrongCounter++;
     addWrong();
 
-    //Subtracts 5 seconds from timer
     clearInterval(timer);
     timerCount += 5;
     startTimer(60); 
@@ -172,7 +168,8 @@ function startTimer(seconds) {
       quizPage.style.display = "none";
       scorePage.style.display = "block";
     } else {
-      timerEl.textContent = seconds - timerCount;
+      var decreaseCount = seconds - timerCount
+      timerEl.textContent = `Seconds left: 00:${decreaseCount}`;
       timerCount++;
     }
   }, 1000);
